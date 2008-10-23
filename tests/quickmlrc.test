@@ -1,0 +1,31 @@
+# -*- mode: ruby -*-
+require 'socket'
+Config = {
+  :port => 10025,
+  :user => "quickml",
+  :group => "quickml",
+
+  :smtp_host => 'localhost',
+  :domain => Socket.gethostname,
+  :postmaster => "info@localhost",
+  :info_url => "http://localhost/",
+
+  :data_dir => Dir.pwd + '/mldata',
+  :log_file => Dir.pwd + '/quickml-log',
+  :verbose_mode => true,
+  :pid_file => Dir.pwd + '/quickml.pid',
+
+  :max_members => 2,
+  :max_mail_length => 1024 * 1024,
+  :ml_life_time => 170,
+  :ml_alert_time => 160,
+  :allowable_error_interval => 3,
+  :auto_unsubscribe_count => 3,
+
+  :sweep_interval => 10,
+  :max_threads => 10,
+  :timeout => 120,
+
+  # :message_catalog = nil  # for English messages
+  :message_catalog => Dir.pwd + '/../messages.ja'
+}
